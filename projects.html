@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Harsath Ali — Web Applications &amp; Live Demos</title>
+  <meta name="description" content="Explore interactive web projects built by Harsath Ali: Calculator, Web Audio Music Player, and responsive Image Gallery with dedicated GitHub repositories and live demo sandboxes.">
+  <meta name="author" content="Harsath Ali">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projects | Harsath Ali">
+  <meta property="og:description" content="Interactive web projects including Calculator, Music Player, and Image Gallery with live sandboxes and GitHub repositories.">
+  <meta property="og:image" content="assets/images/profile.jpg">
+  <meta name="theme-color" content="#080b11">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23080b11'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='48' fill='%2338bdf8'>HA</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Theme Flash Prevention -->
+  <script>
+    (function() {
+      var saved = localStorage.getItem('harsath_portfolio_theme');
+      var theme = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Modular Stylesheets -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor-dot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" aria-hidden="true"></div>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scrollProgress" class="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- NAVIGATION -->
+  <header id="mainHeader" class="main-header">
+    <nav class="nav-container" aria-label="Main Navigation">
+      <a href="index.html" class="nav-brand" aria-label="Harsath Ali Home">
+        <span class="brand-bracket">&lt;</span>
+        <span class="brand-name">HARSATH ALI</span>
+        <span class="brand-bracket">&gt;</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-menu desktop-menu" role="menubar">
+        <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+        <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+        <li role="none"><a href="skills.html" class="nav-link" role="menuitem">Skills</a></li>
+        <li role="none"><a href="experience.html" class="nav-link" role="menuitem">Experience</a></li>
+        <li role="none"><a href="projects.html" class="nav-link active" role="menuitem">Projects</a></li>
+        <li role="none"><a href="certificates.html" class="nav-link" role="menuitem">Certificates</a></li>
+        <li role="none"><a href="education.html" class="nav-link" role="menuitem">Education</a></li>
+        <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
+      </ul>
+
+      <!-- Actions (Theme Toggle, Resume Button & Mobile Toggle) -->
+      <div class="nav-actions">
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle-btn" aria-label="Switch Theme">
+          <span class="theme-icon-container">
+            <svg class="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+          <span class="theme-text-label">Theme</span>
+        </button>
+
+        <a href="resume/Harsath_Ali_Resume.pdf" download="Harsath_Ali_Resume.pdf" id="navResumeBtn" class="btn btn-outline-sm" aria-label="Download Resume">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span>Resume</span>
+        </a>
+
+        <button id="mobileMenuToggle" class="mobile-toggle-btn" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Toggle navigation menu">
+          <span class="hamburger-bar top"></span>
+          <span class="hamburger-bar middle"></span>
+          <span class="hamburger-bar bottom"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="mobile-drawer" aria-hidden="true">
+      <div class="drawer-backdrop" id="drawerBackdrop"></div>
+      <div class="drawer-panel">
+        <div class="drawer-header">
+          <span class="drawer-title">Navigation</span>
+          <button id="drawerCloseBtn" class="drawer-close-btn" aria-label="Close menu">&times;</button>
+        </div>
+        <ul class="drawer-menu">
+          <li><a href="index.html" class="drawer-link">Home</a></li>
+          <li><a href="about.html" class="drawer-link">About</a></li>
+          <li><a href="skills.html" class="drawer-link">Skills</a></li>
+          <li><a href="experience.html" class="drawer-link">Experience</a></li>
+          <li><a href="projects.html" class="drawer-link active">Projects</a></li>
+          <li><a href="certificates.html" class="drawer-link">Certificates</a></li>
+          <li><a href="education.html" class="drawer-link">Education</a></li>
+          <li><a href="contact.html" class="drawer-link">Contact</a></li>
+        </ul>
+        <div class="drawer-footer">
+          <div style="margin-bottom: 0.75rem; display: flex; justify-content: center;">
+            <button class="theme-toggle-btn w-full" aria-label="Switch Theme">
+              <span class="theme-icon-container">
+                <svg class="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              </span>
+              <span class="theme-text-label">Theme Mode</span>
+            </button>
+          </div>
+          <a href="resume/Harsath_Ali_Resume.pdf" download="Harsath_Ali_Resume.pdf" class="btn btn-primary w-full">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span>Download Resume</span>
+          </a>
+          <div class="drawer-socials">
+            <a href="https://github.com/harsathali" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/harsathali" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="mailto:harsathali15122006@gmail.com" aria-label="Email">
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- BACK TO HOME ARROW BAR -->
+    <div class="page-top-bar container">
+      <a href="index.html" class="back-home-btn" aria-label="Back to Home">
+        <svg class="back-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span class="back-text">HOME</span>
+      </a>
+    </div>
+
+    <!-- PAGE BANNER -->
+    <section class="page-banner">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span>Projects</span>
+        </div>
+        <h1 class="page-header-title">Projects</h1>
+        <p class="page-header-subtitle">
+          Real web applications built with semantic HTML, CSS styling, and JavaScript logic. Each project includes both an interactive live demo and a dedicated GitHub repository link.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS GRID SECTION -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="projects-grid">
+
+          <!-- ================= PROJECT 01: CALCULATOR ================= -->
+          <div class="project-card glass-card reveal-fade-up delay-100" id="project-calculator">
+            <div class="project-card-top">
+              <div class="project-num-tag">PROJECT 01</div>
+              <div class="project-tech-badges">
+                <span class="tech-badge">HTML</span>
+                <span class="tech-badge">CSS</span>
+                <span class="tech-badge">JavaScript</span>
+              </div>
+            </div>
+
+            <!-- Preview Visual Mockup -->
+            <div class="project-preview-visual" data-demo="calculator" title="Click to test live Calculator demo">
+              <div class="visual-mockup-header">
+                <div class="window-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                <span class="window-title">Calculator App Preview</span>
+              </div>
+              <div class="visual-mockup-body">
+                <div class="mockup-calc-screen">
+                  <div class="mockup-calc-history">128 × 4 + 16</div>
+                  <div class="mockup-calc-val">528</div>
+                </div>
+                <div class="mockup-calc-keys">
+                  <span>C</span><span>±</span><span>%</span><span class="op">÷</span>
+                  <span>7</span><span>8</span><span>9</span><span class="op">×</span>
+                  <span>4</span><span>5</span><span>6</span><span class="op">-</span>
+                  <span>1</span><span>2</span><span>3</span><span class="op">+</span>
+                  <span class="span-2">0</span><span>.</span><span class="op eq">=</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content & Actions -->
+            <div class="project-card-content">
+              <h3 class="project-title">Calculator</h3>
+              <p class="project-description">
+                Developed a web-based calculator performing addition, subtraction, multiplication, and division with a clean, responsive layout and real-time result display.
+              </p>
+
+              <div class="project-actions">
+                <button class="btn btn-primary-sm open-demo-btn" data-project="calculator" aria-label="Open Interactive Calculator Demo">
+                  <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  <span>VIEW PROJECT DEMO</span>
+                </button>
+                <a href="https://github.com/harsathali/Calculator" target="_blank" rel="noopener noreferrer" class="btn btn-github" data-project-github="calculator" aria-label="View Calculator on GitHub">
+                  <svg class="github-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>VIEW ON GITHUB</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= PROJECT 02: MUSIC PLAYER ================= -->
+          <div class="project-card glass-card reveal-fade-up delay-200" id="project-music">
+            <div class="project-card-top">
+              <div class="project-num-tag">PROJECT 02</div>
+              <div class="project-tech-badges">
+                <span class="tech-badge">HTML</span>
+                <span class="tech-badge">CSS</span>
+                <span class="tech-badge">JavaScript</span>
+              </div>
+            </div>
+
+            <!-- Preview Visual Mockup -->
+            <div class="project-preview-visual" data-demo="music" title="Click to test live Music Player demo">
+              <div class="visual-mockup-header">
+                <div class="window-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                <span class="window-title">Music Player Preview</span>
+              </div>
+              <div class="visual-mockup-body">
+                <div class="mockup-music-album">
+                  <div class="mockup-music-disc spinning-slow">
+                    <div class="disc-inner"></div>
+                  </div>
+                  <div class="mockup-music-info">
+                    <span class="mockup-track-name">Cyber Synthwave Pulse</span>
+                    <span class="mockup-artist">Harsath Web Synthesizer</span>
+                  </div>
+                </div>
+                <div class="mockup-music-bars">
+                  <span class="eq-bar bar-1"></span>
+                  <span class="eq-bar bar-2"></span>
+                  <span class="eq-bar bar-3"></span>
+                  <span class="eq-bar bar-4"></span>
+                  <span class="eq-bar bar-5"></span>
+                  <span class="eq-bar bar-6"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content & Actions -->
+            <div class="project-card-content">
+              <h3 class="project-title">Music Player</h3>
+              <p class="project-description">
+                Built a browser-based music player with play, pause, skip, and track-switching controls and an interactive UI.
+              </p>
+
+              <div class="project-actions">
+                <button class="btn btn-primary-sm open-demo-btn" data-project="music" aria-label="Open Interactive Music Player Demo">
+                  <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  <span>VIEW PROJECT DEMO</span>
+                </button>
+                <a href="https://github.com/harsathali/Music-Player" target="_blank" rel="noopener noreferrer" class="btn btn-github" data-project-github="music" aria-label="View Music Player on GitHub">
+                  <svg class="github-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>VIEW ON GITHUB</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= PROJECT 03: IMAGE GALLERY ================= -->
+          <div class="project-card glass-card reveal-fade-up delay-300" id="project-gallery">
+            <div class="project-card-top">
+              <div class="project-num-tag">PROJECT 03</div>
+              <div class="project-tech-badges">
+                <span class="tech-badge">HTML</span>
+                <span class="tech-badge">CSS</span>
+                <span class="tech-badge">JavaScript</span>
+              </div>
+            </div>
+
+            <!-- Preview Visual Mockup -->
+            <div class="project-preview-visual" data-demo="gallery" title="Click to test live Image Gallery demo">
+              <div class="visual-mockup-header">
+                <div class="window-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                <span class="window-title">Image Gallery Grid Preview</span>
+              </div>
+              <div class="visual-mockup-body">
+                <div class="mockup-gallery-grid">
+                  <div class="mockup-img-tile tile-1"><span class="tile-tag">Dev</span></div>
+                  <div class="mockup-img-tile tile-2"><span class="tile-tag">UI</span></div>
+                  <div class="mockup-img-tile tile-3"><span class="tile-tag">Abstract</span></div>
+                  <div class="mockup-img-tile tile-4"><span class="tile-tag">Design</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content & Actions -->
+            <div class="project-card-content">
+              <h3 class="project-title">Image Gallery</h3>
+              <p class="project-description">
+                Created a responsive, grid-based image gallery with image preview functionality for an enhanced user experience.
+              </p>
+
+              <div class="project-actions">
+                <button class="btn btn-primary-sm open-demo-btn" data-project="gallery" aria-label="Open Interactive Image Gallery Demo">
+                  <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  <span>VIEW PROJECT DEMO</span>
+                </button>
+                <a href="https://github.com/harsathali/Image-Gallery" target="_blank" rel="noopener noreferrer" class="btn btn-github" data-project-github="gallery" aria-label="View Image Gallery on GitHub">
+                  <svg class="github-icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>VIEW ON GITHUB</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= DEDICATED PROJECT DEMO SHOWCASE AREA ================= -->
+        <div class="project-demo-showcase reveal-fade-up delay-200">
+          <div class="demo-showcase-header">
+            <div>
+              <span class="demo-showcase-badge">PROJECT DEMO PRESENTATION</span>
+              <h2 class="demo-showcase-title">Interactive Project Demonstration</h2>
+            </div>
+            <p style="color: var(--text-secondary); max-width: 500px; font-size: 0.95rem;">
+              Directly interact with live sandbox instances of the web applications built with HTML, CSS, and JavaScript.
+            </p>
+          </div>
+
+          <div class="demo-stage-wrapper">
+            <div class="demo-player-frame">
+              <div style="text-align: center; padding: 2rem;">
+                <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(56, 189, 248, 0.15); border: 2px solid var(--accent-cyan); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                  <svg class="icon-lg text-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+                <h4 style="color: #ffffff; margin-bottom: 0.5rem; font-family: var(--font-heading);">Live App Sandboxes Ready</h4>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">Click any project demo below to open the fully functional modal simulator</p>
+              </div>
+
+              <!-- Media Control Overlay -->
+              <div class="demo-controls-overlay">
+                <div class="demo-controls-group">
+                  <span class="demo-ctrl-btn">
+                    <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    <span>PLAY</span>
+                  </span>
+                  <span class="demo-ctrl-btn">
+                    <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                    <span>PAUSE</span>
+                  </span>
+                  <span class="demo-ctrl-btn">
+                    <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                    <span>MUTE</span>
+                  </span>
+                </div>
+                <span class="demo-ctrl-btn">
+                  <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+                  <span>FULLSCREEN</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="demo-info-panel">
+              <h4>Select An App Simulator:</h4>
+              <p>
+                Each project is coded with clean semantic HTML, modular CSS styling, and robust JavaScript event-handling logic.
+              </p>
+              <div class="demo-cta-row">
+                <button class="btn btn-primary open-demo-btn" data-project="calculator">
+                  <span>Calculator Demo</span>
+                </button>
+                <button class="btn btn-secondary open-demo-btn" data-project="music">
+                  <span>Music Synthesizer Demo</span>
+                </button>
+                <button class="btn btn-outline open-demo-btn" data-project="gallery">
+                  <span>Gallery Lightbox Demo</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= LIVE DEMO MODALS ================= -->
+
+  <!-- 1. Interactive Calculator Modal -->
+  <div id="calculatorModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="calcModalTitle">
+    <div class="modal-backdrop" id="calcBackdrop"></div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <span class="demo-tag">LIVE APP SANDBOX</span>
+          <h3 id="calcModalTitle" class="modal-title">Calculator — Interactive Demo</h3>
+        </div>
+        <button class="modal-close-btn" id="calcCloseBtn" aria-label="Close calculator">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="interactive-calc-wrapper">
+          <div class="calc-top-bar">
+            <span>Standard Calculator</span>
+            <span>HTML • CSS • JS</span>
+          </div>
+          <div class="calc-display-panel">
+            <div class="calc-formula" id="calcFormula"></div>
+            <div class="calc-current" id="calcDisplay">0</div>
+          </div>
+          <div class="calc-keypad-grid">
+            <button class="calc-btn calc-fn" data-action="clear">AC</button>
+            <button class="calc-btn calc-fn" data-action="backspace">⌫</button>
+            <button class="calc-btn calc-fn" data-action="percent">%</button>
+            <button class="calc-btn calc-op" data-action="operator" data-val="/">÷</button>
+
+            <button class="calc-btn calc-num" data-action="num" data-val="7">7</button>
+            <button class="calc-btn calc-num" data-action="num" data-val="8">8</button>
+            <button class="calc-btn calc-num" data-action="num" data-val="9">9</button>
+            <button class="calc-btn calc-op" data-action="operator" data-val="*">×</button>
+
+            <button class="calc-btn calc-num" data-action="num" data-val="4">4</button>
+            <button class="calc-btn calc-num" data-action="num" data-val="5">5</button>
+            <button class="calc-btn calc-num" data-action="num" data-val="6">6</button>
+            <button class="calc-btn calc-op" data-action="operator" data-val="-">−</button>
+
+            <button class="calc-btn calc-num" data-action="num" data-val="1">1</button>
+            <button class="calc-btn calc-num" data-action="num" data-val="2">2</button>
+            <button class="calc-btn calc-num" data-action="num" data-val="3">3</button>
+            <button class="calc-btn calc-op" data-action="operator" data-val="+">+</button>
+
+            <button class="calc-btn calc-num calc-zero" data-action="num" data-val="0">0</button>
+            <button class="calc-btn calc-num" data-action="decimal">.</button>
+            <button class="calc-btn calc-equals" data-action="equals">=</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Interactive Music Player Modal -->
+  <div id="musicModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="musicModalTitle">
+    <div class="modal-backdrop" id="musicBackdrop"></div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <span class="demo-tag">LIVE APP SANDBOX</span>
+          <h3 id="musicModalTitle" class="modal-title">Music Player — Web Audio Synthesizer</h3>
+        </div>
+        <button class="modal-close-btn" id="musicCloseBtn" aria-label="Close music player">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="interactive-player-card">
+          <div class="player-top-visual">
+            <div class="player-disc-large" id="playerDisc">
+              <div class="disc-vinyl-center">
+                <svg class="icon-md text-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 9l6 3-6 3V9z"/></svg>
+              </div>
+            </div>
+            <canvas id="audioVisualizerCanvas" class="visualizer-canvas" width="280" height="50"></canvas>
+          </div>
+
+          <div class="player-info-section">
+            <h4 class="player-track-name" id="playerTrackName">Cyber Synthwave Pulse</h4>
+            <p class="player-artist-name" id="playerArtistName">Harsath Web Synthesizer</p>
+          </div>
+
+          <div class="player-progress-area">
+            <div class="player-time-row">
+              <span id="playerCurrentTime">0:00</span>
+              <span id="playerTotalTime">0:30</span>
+            </div>
+            <div class="player-slider-track" id="playerProgressTrack">
+              <div class="player-slider-fill" id="playerProgressFill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <div class="player-controls-row">
+            <button class="player-btn" id="playerPrevBtn" aria-label="Previous Track">
+              <svg class="icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>
+            </button>
+            <button class="player-play-btn" id="playerPlayBtn" aria-label="Play or Pause">
+              <svg class="icon-lg play-icon" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <svg class="icon-lg pause-icon hidden" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+            </button>
+            <button class="player-btn" id="playerNextBtn" aria-label="Next Track">
+              <svg class="icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
+            </button>
+          </div>
+
+          <div class="player-playlist-list">
+            <div class="playlist-header">Track List</div>
+            <div class="playlist-item active" data-track="0">
+              <span class="track-idx">01</span>
+              <span class="track-title">Cyber Synthwave Pulse</span>
+              <span class="track-dur">0:30</span>
+            </div>
+            <div class="playlist-item" data-track="1">
+              <span class="track-idx">02</span>
+              <span class="track-title">Lo-Fi Study Beats</span>
+              <span class="track-dur">0:30</span>
+            </div>
+            <div class="playlist-item" data-track="2">
+              <span class="track-idx">03</span>
+              <span class="track-title">Upbeat Ambient Flow</span>
+              <span class="track-dur">0:30</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Interactive Image Gallery Modal -->
+  <div id="galleryModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="galleryModalTitle">
+    <div class="modal-backdrop" id="galleryBackdrop"></div>
+    <div class="modal-container modal-xl">
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <span class="demo-tag">LIVE APP SANDBOX</span>
+          <h3 id="galleryModalTitle" class="modal-title">Image Gallery — Responsive Grid &amp; Filtering</h3>
+        </div>
+        <button class="modal-close-btn" id="galleryCloseBtn" aria-label="Close gallery">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="gallery-filter-tabs">
+          <button class="gallery-tab active" data-filter="all">All Items</button>
+          <button class="gallery-tab" data-filter="dev">Development</button>
+          <button class="gallery-tab" data-filter="ui">UI &amp; Architecture</button>
+          <button class="gallery-tab" data-filter="abstract">Abstract Art</button>
+        </div>
+
+        <div class="gallery-dynamic-grid" id="galleryDynamicGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox for Image Gallery Preview -->
+  <div id="lightboxModal" class="lightbox-overlay" aria-hidden="true">
+    <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close preview">&times;</button>
+    <div class="lightbox-content">
+      <div class="lightbox-media-wrapper" id="lightboxMediaWrapper"></div>
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <div class="footer-brand-area">
+        <a href="index.html" class="footer-brand-logo">
+          <span class="brand-bracket">&lt;</span>
+          <span class="brand-name">HARSATH ALI</span>
+          <span class="brand-bracket">&gt;</span>
+        </a>
+        <p class="footer-role">Computer Science Engineering Student • Aspiring Software Developer</p>
+      </div>
+
+      <div class="footer-social-area">
+        <a href="https://github.com/harsathali" target="_blank" rel="noopener noreferrer" class="footer-icon-link" aria-label="GitHub Profile">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/harsathali" target="_blank" rel="noopener noreferrer" class="footer-icon-link" aria-label="LinkedIn Profile">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="mailto:harsathali15122006@gmail.com" class="footer-icon-link" aria-label="Send Email">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+
+      <div class="footer-copyright">
+        <p>&copy; 2026 Harsath Ali. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RESUME MODAL -->
+  <div id="resumeModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="resumeModalTitle">
+    <div class="modal-backdrop" id="resumeBackdrop"></div>
+    <div class="modal-container modal-lg">
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <h3 id="resumeModalTitle" class="modal-title">Harsath Ali A — Resume</h3>
+          <span class="modal-badge">Official Document</span>
+        </div>
+        <div class="modal-header-actions">
+          <a href="resume/Harsath_Ali_Resume.pdf" download="Harsath_Ali_Resume.pdf" class="btn btn-outline-sm">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download</span>
+          </a>
+          <button class="modal-close-btn" id="resumeCloseBtn" aria-label="Close modal">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body resume-modal-body">
+        <div class="resume-preview-wrapper">
+          <img src="assets/images/resume.jpg" alt="Harsath Ali A Resume - Computer Science Engineering Student" class="resume-full-img">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to Top" title="Back to Top">
+    <svg class="icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- Toast Notification -->
+  <div id="toastNotification" class="toast-notification" role="alert" aria-live="polite">
+    <div class="toast-icon" id="toastIcon">
+      <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <span class="toast-message" id="toastMessage">Action completed successfully!</span>
+  </div>
+
+  <!-- GSAP & Swiper Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Modular Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/swiper-config.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

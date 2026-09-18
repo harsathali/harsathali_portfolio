@@ -1,0 +1,326 @@
+/* ==========================================================================
+   HARSATH ALI - ANIMATIONS STYLESHEET
+   Keyframes, Reusable Animation Classes, Page Transitions & Accessibility
+   ========================================================================== */
+
+/* ================= 1. KEYFRAME DEFINITIONS ================= */
+
+/* Page Transitions */
+@keyframes pageEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageExit {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+}
+
+/* Fades */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slides */
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scales & Reveals */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes revealSlow {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Loops & Continuous Effects */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.85;
+  }
+}
+
+@keyframes pulseCore {
+  0% { transform: scale(0.85); opacity: 0.7; }
+  100% { transform: scale(1.2); opacity: 1; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(0.92); opacity: 0.35; }
+  50% { transform: scale(1.08); opacity: 0.8; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes dashCycle {
+  0% { stroke-dashoffset: 140; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes menuSlideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes eqBounce {
+  0%, 100% { height: 6px; }
+  50% { height: 26px; }
+}
+
+/* ================= 2. ANIMATION UTILITY CLASSES ================= */
+.anim-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-fade-up {
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-fade-down {
+  animation: fadeDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-slide-left {
+  animation: slideLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-slide-right {
+  animation: slideRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-scale-in {
+  animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-float {
+  animation: float 4.5s ease-in-out infinite;
+}
+
+.anim-pulse {
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+.animate-spin {
+  animation: spin 0.85s linear infinite;
+}
+
+/* Staggered Delay Utilities */
+.delay-100 { animation-delay: 100ms !important; }
+.delay-150 { animation-delay: 150ms !important; }
+.delay-200 { animation-delay: 200ms !important; }
+.delay-250 { animation-delay: 250ms !important; }
+.delay-300 { animation-delay: 300ms !important; }
+.delay-350 { animation-delay: 350ms !important; }
+.delay-400 { animation-delay: 400ms !important; }
+.delay-450 { animation-delay: 450ms !important; }
+.delay-500 { animation-delay: 500ms !important; }
+.delay-600 { animation-delay: 600ms !important; }
+.delay-700 { animation-delay: 700ms !important; }
+
+/* Page Transition States */
+body.page-enter {
+  animation: pageEnter 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+body.page-exit {
+  animation: pageExit 0.25s ease-in forwards;
+  pointer-events: none;
+}
+
+/* Scroll Reveal States */
+.reveal-fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-fade-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.reveal-slide-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-slide-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Timeline & Card Animations */
+.timeline-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Interactive Card Hover Elevations */
+.interactive-card {
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.interactive-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ================= 3. REDUCED MOTION ACCESSIBILITY ================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-fade-up,
+  .reveal-scale,
+  .reveal-slide-left,
+  .timeline-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .anim-float,
+  .anim-pulse,
+  .animate-spin,
+  .spinning-slow {
+    animation: none !important;
+  }
+
+  body.page-enter,
+  body.page-exit {
+    animation: none !important;
+  }
+}

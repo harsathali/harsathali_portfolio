@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09101d"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#070c16"/>
+    </linearGradient>
+    <linearGradient id="codealphaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="goldGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="560" rx="16" fill="url(#bgGrad5)"/>
+  <rect x="24" y="24" width="752" height="512" rx="12" fill="none" stroke="url(#codealphaGrad)" stroke-width="2" opacity="0.5"/>
+  <rect x="36" y="36" width="728" height="488" rx="8" fill="none" stroke="#f59e0b" stroke-width="1" stroke-dasharray="8 6" opacity="0.25"/>
+  
+  <text x="400" y="90" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="28" fill="#f59e0b" letter-spacing="4">CODEALPHA</text>
+  <text x="400" y="115" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="500" font-size="12" fill="#94a3b8" letter-spacing="2">VIRTUAL INTERNSHIP PROGRAM</text>
+  
+  <line x1="280" y1="135" x2="520" y2="135" stroke="url(#codealphaGrad)" stroke-width="2"/>
+  
+  <text x="400" y="180" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="400" font-size="14" fill="#94a3b8" letter-spacing="1.5">INTERNSHIP COMPLETION CERTIFICATE</text>
+  <text x="400" y="210" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="300" font-size="14" fill="#64748b">PROUDLY PRESENTED TO</text>
+  
+  <text x="400" y="260" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="34" fill="#ffffff" letter-spacing="2">HARSATH ALI A</text>
+  
+  <text x="400" y="300" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="400" font-size="14" fill="#94a3b8">FOR SUCCESSFUL COMPLETION OF ONLINE INTERNSHIP AS</text>
+  
+  <rect x="160" y="325" width="480" height="52" rx="8" fill="#1e293b" opacity="0.8" stroke="#f59e0b" stroke-width="1"/>
+  <text x="400" y="358" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="22" fill="#f59e0b" letter-spacing="1">Frontend Developer Intern</text>
+  
+  <circle cx="400" cy="445" r="32" fill="none" stroke="url(#goldGrad5)" stroke-width="2"/>
+  <circle cx="400" cy="445" r="26" fill="#1e293b" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4 3"/>
+  <path d="M392 445 L398 451 L408 439" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="495" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="600" font-size="11" fill="#f59e0b" letter-spacing="1">VERIFIED INTERNSHIP CREDENTIAL</text>
+  
+  <text x="100" y="485" text-anchor="start" font-family="'Inter', sans-serif" font-weight="500" font-size="11" fill="#64748b">CODEALPHA EDUTECH</text>
+  <text x="700" y="485" text-anchor="end" font-family="'Inter', sans-serif" font-weight="500" font-size="11" fill="#64748b">PERFORMANCE VERIFIED</text>
+</svg>
